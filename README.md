@@ -1,6 +1,6 @@
 # vue-echarts-element-stylus
 
-> vue高度封装的echarts高度封装的mele[Dntnt的table
+> 高度封装的elemnet表格组件，高度封装echarts，excel表格上传，excel表格下载
 
 ## Build Setup
 
