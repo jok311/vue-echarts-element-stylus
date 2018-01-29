@@ -1,0 +1,28 @@
+<template>
+  <section class="app-main" style="min-height: 100%">
+    <transition name="fade" mode="out-in">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'AppMain',
+  // computed: {
+  //   cachedViews() {
+  //     console.log(this.$store.state.tagsView.cachedViews)
+  //     return this.$store.state.tagsView.cachedViews
+  //   }
+    // key() {
+    //   return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
+    // }
+  // },
+
+}
+</script>
+<style lang="stylus">
+
+</style>
