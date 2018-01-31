@@ -1,17 +1,17 @@
 const MenuHeaderData = [
           {
-            "label": "日期", 	//标题文字
-            "prop": "days", //标题key，处理表格下载数据用到,折线图表用到
+            "label": "上架时间", 	//标题文字
+            "prop": "dateTime", //标题key，处理表格下载数据用到,折线图表用到
             "type": "", //label + type = 表格th标题
-            "dataKeys": ["upTime"], //当前列展示的数据key值，可以一个展示多个值,处理表格下载数据用到
+            "dataKeys": ["dateTime"], //当前列展示的数据key值，可以一个展示多个值,处理表格下载数据用到
             "icon": "el-icon-time", // 图标icon
-            "tip": "酒款在选中日期的0点-24点的时间段内的各项数据" //当前行数据解析
+            "tip": "上架时间" //当前行数据解析
           },
           {
             "label": "商品标题",
-            "prop": "glancekacharigist",
+            "prop": "titlr",
             "type": "",
-            "dataKeys": ["recordTitle"],
+            "dataKeys": ["title"],
             "tip": "商品标题",
             "align": "left",
             "width": "200",
@@ -20,10 +20,10 @@ const MenuHeaderData = [
 
           {
             "label": "推荐人",
-            "prop": "detailName",
+            "prop": "cname",
             "type": "",
-            "dataKeys": ["detailName"],
-            "tip": "酒款推荐人",
+            "dataKeys": ["cname"],
+            "tip": "发布人",
             "isSortable": false,
             "hidden": true,
             "filters": [
@@ -39,85 +39,69 @@ const MenuHeaderData = [
 
           {
             "label": "商品价格",
-            "prop": "recordPrice",
+            "prop": "price",
             "type": "",
-            "dataKeys": ["recordPrice"],
+            "dataKeys": ["price"],
             "tip": "商品价格"
           },
+
           {
-            "label": "浏览量",
+            "label": "商品成交额",
+            "prop": "paySum",
+            "type": "",
+            "dataKeys": ["paySum"],
+            "tip": "商品成交额"
+          },
+          {
+            "label": "商品成交量",
+            "prop": "buyUV",
+            "type": "",
+            "dataKeys": ["buyUV"],
+            "tip": "商品成交量"
+          },          
+          {
+            "label": "总访客量",
             "prop": "allSource",
-            "type": "PV/UV",
-            "dataKeys": ["allSourcePV", "allSourceUV"],
-            "tip": "推荐酒款日浏览量，日访客量。"
-          },
+            "type": "UV",
+            "dataKeys": ["allSourceUV"],
+            "tip": "商品浏览量PV，访客量UV"
+          },                    
           {
-            "label": "点击购买",
-            "prop": "clickbuy",
-            "type": "PV/UV",
-            "dataKeys": ["clickbuyPV", "clickbuyUV"],
-            "tip": "专家推荐酒款页面，点击购买按钮的日量，日人量。百分比： 专家推荐酒款页面点击购买按钮UV / 访问专家推荐酒款UV。"
-          },
+            "label": "总浏览量",
+            "prop": "allSource",
+            "type": "PV",
+            "dataKeys": ["allSourcePV"],
+            "tip": "商品浏览量PV，访客量UV"
+          },           
           {
-            "label": "点购买PV转化",
-            "prop": "clickbuy",
+            "label": "收藏量",
+            "prop": "collectionUV",
             "type": "",
-            "dataKeys": [],
-            "percentKeys": {
-              "indexKey": "allSourcePV",
-              "subKey": "clickbuyPV"
-            },
-            "isSortable": false,
-            "tip": "点击购买按钮PV / 酒款浏览量PV"
+            "dataKeys": ["collectionUV"],
+            "tip": "加入收藏夹的用户UV"
           },
           {
-            "label": "点购买UV转化",
-            "prop": "clickbuy",
+            "label": "购物车",
+            "prop": "collectionUV",
             "type": "",
-            "dataKeys": [],
-            "percentKeys": {
-              "indexKey": "allSourceUV",
-              "subKey": "clickbuyUV"
-            },
-            "isSortable": false,
-            "tip": "点击购买按钮UV / 酒款浏览量UV"
+            "dataKeys": ["collectionUV"],
+            "tip": "加入购物车的用户UV"
           },
+         
           {
-            "label": "白菜价",
-            "prop": "catwinelowprice",
+            "label": "百度浏览访客",
+            "prop": "baiduSource",
             "type": "PV/UV",
-            "dataKeys": ["catwinelowpricePV", "catwinelowpriceUV"],
-            "tip": "白菜价栏目推荐酒款日浏览量，日访客量。"
-          },
+            "dataKeys": ["baiduSourcePV", "baiduSourceUV"],
+            "tip": "通过百度渠道来源的，商品浏览量PV，访客量UV"
+          },           
           {
-            "label": "大牌美酒",
-            "prop": "wineLevel",
+            "label": "微信浏览访客",
+            "prop": "weixinSource",
             "type": "PV/UV",
-            "dataKeys": ["wineLevelPV", "wineLevelUV"],
-            "tip": "大牌美酒栏目推荐酒款日浏览量，日访客量。"
-          },
-          {
-            "label": "PUSH",
-            "prop": "kcPush",
-            "type": " UV/PV",
-            "dataKeys": ["kcPushUV", "kcPushPV"],
-            "tip": "PUSH消息进来的专家推荐酒款日浏览量和日访问量"
-          },
-          {
-            "label": "今日推荐",
-            "prop": "kcWineDetailFloat",
-            "type": " UV/PV",
-            "dataKeys": ["kcWineDetailFloatUV", "kcWineDetailFloatPV"],
-            "tip": "酒款信息页面今日推荐浮动广告进来的专家推荐酒款日浏览量和日访问量"
-          },
-          {
-            "label": "轮播栏",
-            "prop": "kcIndexLunBo",
-            "type": " UV/PV",
-            "dataKeys": ["kcIndexLunBoUV", "kcIndexLunBoPV"],
-            "tip": "从轮播栏广告进来的专家推荐酒款日浏览量和日访问量"
-          },
-          
+            "dataKeys": ["weixinSourcePV", "weixinSourceUV"],
+            "tip": "通过微信渠道（公众号，订阅号，分享）来源的，商品浏览量PV，访客量UV"
+          }, 
         ];
 
 

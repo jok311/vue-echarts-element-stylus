@@ -1,27 +1,29 @@
 <template>
-  <el-table ref="elementtable" @sort-change="sortchange" tooltip-effect="dark" :data="tableArr" style="width: 100%" :height="tableHeight">  
-    <el-table-column      
-      v-for="(item,i) in MenuHeaderData"
-      v-if="item.hidden ? false : true"
-      :align="item.align ? item.align : 'center' "
-      :width="item.width ? item.width : '200'"
-      :fixed="i < 2"
-      :label="item.label+item.type"
-      :column-key="item.dataKeys[0]"
-      :sortable="item.isSortable == false ? false : 'custom'"
-      :prop="item.tip"
-      :render-header="renderHeader"
-      :key="i">
-        <template slot-scope="scope">
-          <slot :row="scope.row" :$index="i" :item="item">
-            <!-- 当前列展示的数据，可以一个展示多个数据-->
-            <span v-if="item.dataKeys.length">
-              <span>{{ scope.row[item.dataKeys[0]] }}</span>
-            </span>            
-          </slot>   
-        </template>
-    </el-table-column>
-  </el-table>    
+  <div class="element-table-box" ref="tableBox">
+    <el-table ref="elementtable" @sort-change="sortchange" tooltip-effect="dark" :data="tableArr" style="width: 100%" :height="tableHeight">  
+      <el-table-column      
+        v-for="(item,i) in MenuHeaderData"
+        v-if="item.hidden ? false : true"
+        :align="item.align ? item.align : 'center' "
+        :width="item.width ? item.width : '200'"
+        :fixed="i < 2"
+        :label="item.label+item.type"
+        :column-key="item.dataKeys[0]"
+        :sortable="item.isSortable == false ? false : 'custom'"
+        :prop="item.tip"
+        :render-header="renderHeader"
+        :key="i">
+          <template slot-scope="scope">
+            <slot :row="scope.row" :$index="i" :item="item">
+              <!-- 当前列展示的数据，可以一个展示多个数据-->
+              <span v-if="item.dataKeys.length">
+                <span>{{ scope.row[item.dataKeys[0]] }}</span>
+              </span>            
+            </slot>   
+          </template>
+      </el-table-column>
+    </el-table>    
+  </div>
 </template>
 
 <script>
@@ -58,7 +60,7 @@
   }
 </script>
 <style lang="stylus">
-.kacha-table-box
+.element-table-box
   margin 8px 16px 0 16px
   border 1px solid #e6ebf5
   box-sizing border-box

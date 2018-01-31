@@ -12,19 +12,19 @@ routes: [
       path: '/',
       component: Layout,
       name: 'index',
-      redirect: 'tablelineecharts/index',
+      redirect: 'goodlist/index',
       children: [
-        {path: 'index', component: _import('TableLineEcharts/index')}
+        {path: 'index', component: _import('GoodList/index')}
       ]
     },
 
     {
-      path: '/tablelineecharts',
+      path: '/goodlist',
       component: Layout,
-      name: 'tablelineecharts/index',
-      redirect: 'tablelineecharts/index',
+      name: 'goodlist/index',
+      redirect: 'goodlist/index',
       children: [
-        {path: 'index', component: _import('TableLineEcharts/index')}
+        {path: 'index', component: _import('GoodList/index')}
       ]
     },
   ]

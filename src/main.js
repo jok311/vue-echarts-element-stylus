@@ -9,7 +9,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import * as filters from '@/filters'//过滤器
 import * as globalfunctions from 'globalFunctions'
-
+import './mock' // 模拟数据 simulation data
 import 'url-search-params-polyfill'  // ajax 控件兼容插件
 
 Vue.config.productionTip = false

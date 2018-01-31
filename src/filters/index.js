@@ -1,35 +1,35 @@
-// åˆ—è¡¨æ—¶é—´è½¬æ¢å‡½æ•° (åœ¨HTMLé¡µé¢çš„æ¨¡æ¿ä¸­ä½¿ç”¨)
+// ÁÐ±íÊ±¼ä×ª»»º¯Êý (ÔÚHTMLÒ³ÃæµÄÄ£°åÖÐÊ¹ÓÃ)
 const  formatTime = (timeStrap) => {
     var cusDate=timeStrap;
     var outputTime=null;
 
-    var nowDate=new Date();  // ä»Šå¤©æ—¥æœŸ
-    var oDate=new Date(cusDate);//.Format("yyyy-MM-dd HH:mm:ss"); èŽ·å–çš„æ—¶é—´
+    var nowDate=new Date();  // ½ñÌìÈÕÆÚ
+    var oDate=new Date(cusDate);//.Format("yyyy-MM-dd HH:mm:ss"); »ñÈ¡µÄÊ±¼ä
 
-    if( nowDate.getMonth() != oDate.getMonth() ){ // ä¸åœ¨å½“å‰æœˆä»½
-        outputTime=oDate.Format("MMæœˆddæ—¥");
+    if( nowDate.getMonth() != oDate.getMonth() ){ // ²»ÔÚµ±Ç°ÔÂ·Ý
+        outputTime=oDate.Format("MMÔÂddÈÕ");
     }else{
         if(parseInt(nowDate.getDate())>parseInt(oDate.getDate())){
-            outputTime=oDate.Format("MMæœˆddæ—¥");
+            outputTime=oDate.Format("MMÔÂddÈÕ");
         }else{
             // outputTime=oDate.Format("hh:mm");
-            outputTime='ä»Šæ—¥';
+            outputTime='½ñÈÕ';
         }
     }
     return outputTime;//+"+"+nowDate.getDate()+"+"+oDate.getDate()+"+"+nowDate.getMonth()+"+"+oDate.getMonth()+"+"+cusDate;
 }
 
 
-/*æ ¼å¼åŒ–æ—¶é—´*/
+/*¸ñÊ½»¯Ê±¼ä*/
 Date.prototype.Format = function (fmt) {
   var o = {
-      "M+": this.getMonth() + 1, //æœˆä»½
-      "d+": this.getDate(), //æ—¥
-      "h+": this.getHours(), //å°æ—¶
-      "m+": this.getMinutes(), //åˆ†
-      "s+": this.getSeconds(), //ç§’
-      "q+": Math.floor((this.getMonth() + 3) / 3), //å­£åº¦
-      "S": this.getMilliseconds() //æ¯«ç§’
+      "M+": this.getMonth() + 1, //ÔÂ·Ý
+      "d+": this.getDate(), //ÈÕ
+      "h+": this.getHours(), //Ð¡Ê±
+      "m+": this.getMinutes(), //·Ö
+      "s+": this.getSeconds(), //Ãë
+      "q+": Math.floor((this.getMonth() + 3) / 3), //¼¾¶È
+      "S": this.getMilliseconds() //ºÁÃë
   };
   if (/(y+)/.test(fmt)){fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));}
   for (var k in o)
@@ -38,25 +38,25 @@ Date.prototype.Format = function (fmt) {
 }
 
 
-// ä¿ç•™ä¸¤ä½å°æ•°
+// ±£ÁôÁ½Î»Ð¡Êý
 const tofix = (num) => {
     return Math.round(num*100)/100;
 }
 
-// å¯¹è±¡å–å‡ºå€¼å˜ä¸ºæ•°ç»„ï¼Œæ•°ç»„æ’å…¥é€—å·
+// ¶ÔÏóÈ¡³öÖµ±äÎªÊý×é£¬Êý×é²åÈë¶ººÅ
 const arrJoin = (val) => {
   Object.keys(val).map(function(k){
     return val[k] = val[k]['grape_ch']
   });
-  return val.join('ï¼Œ');
+  return val.join('£¬');
 }
 
-// èŽ·å–æ˜ŸæœŸå‡ 
+// »ñÈ¡ÐÇÆÚ¼¸
 const getDay = (date) => {
   let dateArr=date.split('-')
   let setdate=new Date(dateArr[0],parseInt(dateArr[1]-1),dateArr[2])
-  let day = "æ—¥ä¸€äºŒä¸‰å››äº”å…­".charAt(setdate.getDay())
-  return `${date} ${day}`  //æ˜ŸæœŸå‡ 
+  let day = "ÈÕÒ»¶þÈýËÄÎåÁù".charAt(setdate.getDay())
+  return `${date} ${day}`  //ÐÇÆÚ¼¸
 }
 
 /**
@@ -78,4 +78,13 @@ const getOnlyPercentData = (row, percentKeys) => {
   return `${percentFloat.toFixed(1)}%`
 }
 
-export{tofix, formatTime, arrJoin, getDay, getPercentData, getOnlyPercentData}
+// ±í¸ñÁÐÊý¾Ý
+const getTableColumn = (row, dataKeys) => {
+  let columnStrigArr = []
+  for(let i of dataKeys) {
+    columnStrigArr.push(row[i])
+  }
+  return columnStrigArr.join(' / ')
+}
+
+export{tofix, formatTime, arrJoin, getDay, getPercentData, getOnlyPercentData, getTableColumn}

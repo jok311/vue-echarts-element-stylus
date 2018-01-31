@@ -14,7 +14,7 @@
               { 'text': '咔嚓优选团 Reina', 'value': '咔嚓优选团 Reina' },
               { 'text': '咔嚓优选团 Cci', 'value': '咔嚓优选团 Cci' },
               { 'text': '咔嚓优选团 Lucky', 'value': '咔嚓优选团 Lucky' },
-              ]"      
+            ]"      
         :filter-method="filterTag"
         filter-placement="bottom-end">
 
