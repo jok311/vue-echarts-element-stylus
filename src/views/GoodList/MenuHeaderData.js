@@ -58,7 +58,14 @@ const MenuHeaderData = [
             "type": "",
             "dataKeys": ["buyUV"],
             "tip": "商品成交量"
-          },          
+          }, 
+          {
+            "label": "访客",
+            "prop": "allSource",
+            "type": "UV/PV",
+            "dataKeys": ["allSourceUV, allSourcePV"],
+            "tip": "商品浏览量PV，访客量UV"
+          },                    
           {
             "label": "总访客量",
             "prop": "allSource",

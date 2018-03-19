@@ -18,5 +18,8 @@ body,html
   color #2c3e50
   margin 0
   padding 0
+a
+  color #409EFF
+  text-decoration none
 </style>
 

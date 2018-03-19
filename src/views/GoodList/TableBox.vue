@@ -23,7 +23,7 @@
           <i v-if="item.icon" :class="item.icon"></i>
 
           <!-- 当前列展示的数据，可以一个展示多个数据-->
-          <span v-if="item.dataKeys.length" v-for="(value, index, key) in item.dataKeys">
+          <span v-if="item.dataKeys.length" v-for="(value, index, key) in item.dataKeys" :key="index">
 
             <!-- 非最后一个 -->
             <span v-if="index != item.dataKeys.length-1">{{ scope.row[value] }} /</span>
