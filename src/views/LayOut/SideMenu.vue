@@ -12,106 +12,14 @@
           text-color="#fff"
           active-text-color="#409EFF">
 
-<!--           <router-link  to="/querymultiple/index" tag="span">
-            <el-menu-item index="/querymultiple/index">
+          <router-link  to="/goodlist/index" tag="span">
+            <el-menu-item index="/goodlist/index">
               <template slot="title">
-                <span>统计查询系统</span>
-              </template>
-            </el-menu-item>
-          </router-link> -->
-
-          <el-submenu index="1">
-            <template slot="title">
-              <span>统计查询系统</span>
-            </template>
-            <template>
-              <router-link to="/querymultiple/index" tag="span">
-                <el-menu-item index="/querymultiple/index">多选查询系统</el-menu-item>
-              </router-link>
-              <router-link to="/querysystem/index" tag="span">
-                <el-menu-item index="/querysystem/index">单选查询系统</el-menu-item>
-              </router-link>
-            </template>
-          </el-submenu>
-
-
-          <el-submenu index="2">
-            <template slot="title">
-              <span>发现</span>
-            </template>
-
-            <template>
-              <router-link to="/kachaindex/index" tag="span">
-                <el-menu-item index="/kachaindex/index">发现&酒款数据汇总</el-menu-item>
-              </router-link>
-
-              <router-link to="/winedetail/index" tag="span">
-                <el-menu-item index="/winedetail/index">推荐酒款总数据</el-menu-item>
-              </router-link>
-
-              <router-link to="/winedetaildaily/index" tag="span">
-                <el-menu-item index="/winedetaildaily/index">推荐酒款某日数据</el-menu-item>
-              </router-link>
-
-              <router-link to="/freeneed/index" tag="span">
-                <el-menu-item index="/freeneed/index">白菜&大牌</el-menu-item>
-              </router-link>
-
-            </template>
-          </el-submenu>
-
-          <router-link  to="/square/index" tag="span">
-            <el-menu-item index="/square/index">
-              <template slot="title">
-                <span>淘醉</span>
+                <span>表格组件</span>
               </template>
             </el-menu-item>
           </router-link>
 
-          <el-submenu index="6">
-            <template slot="title">
-              <span>CPS成交数据</span>
-            </template>
-            <template>
-              <router-link to="/tmcpsdaily/index" tag="span">
-                <el-menu-item index="/tmcpsdaily/index">淘宝成交日数据</el-menu-item>
-              </router-link>
-
-              <router-link to="/uploadexcel/index" tag="span">
-                <el-menu-item index="/uploadexcel/index">导入成交明细</el-menu-item>
-              </router-link>
-
-            </template>
-          </el-submenu>
-
-          <el-submenu index="5">
-            <template slot="title">
-              <span>H5酒款信息</span>
-            </template>
-            <template>
-              <router-link to="/wineinfo/index" tag="span">
-                <el-menu-item index="/wineinfo/index">二级页面浏览</el-menu-item>
-              </router-link>
-              <router-link to="/wineinfocount/index" tag="span">
-                <el-menu-item index="/wineinfocount/index">二级页面类型总浏览</el-menu-item>
-              </router-link>
-<!--               <router-link to="/wineinfofirstlevel/index" tag="span">
-                <el-menu-item index="/wineinfofirstlevel/index">一级页面渠道浏览量</el-menu-item>
-              </router-link> -->
-            </template>
-          </el-submenu>
-
-
-<!--           <el-submenu index="7">
-            <template slot="title">
-              <span>爬虫</span>
-            </template>
-            <template>
-              <router-link to="/querysystem/index" tag="span">
-                <el-menu-item index="/querysystem/index">爬虫库酒款标签</el-menu-item>
-              </router-link>
-            </template>
-          </el-submenu> -->
 
         </el-menu>
       </el-col>
