@@ -19,7 +19,6 @@ body,html
   margin 0
   padding 0
 a
-  color #409EFF
   text-decoration none
 </style>
 

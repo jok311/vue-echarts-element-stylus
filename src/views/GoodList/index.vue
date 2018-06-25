@@ -34,7 +34,7 @@
 			    <span>{{ scope.row[scope.item.dataKeys] }}</span>
 		    </a>
 
-		  </template>					  
+		  </template>					 
 
 		</element-table-box>
 	</div>
@@ -190,5 +190,8 @@ export default {
 
 .globalLoading {
 	margin-left: 180px;
+}
+a {
+  color #0e85fe
 }
 </style>

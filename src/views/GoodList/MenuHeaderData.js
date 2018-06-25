@@ -25,15 +25,15 @@ const MenuHeaderData = [
             "dataKeys": ["cname"],
             "tip": "发布人",
             "isSortable": false,
-            "hidden": true,
+            "hidden": false,
             "filters": [
-              { 'text': '咔嚓优选团 kitty', 'value': '咔嚓优选团 kitty' },
-              { 'text': '咔嚓优选团 周周', 'value': '咔嚓优选团 周周' },
-              { 'text': '咔嚓优选团 Smile', 'value': '咔嚓优选团 Smile' },
-              { 'text': '咔嚓优选团 大俊', 'value': '咔嚓优选团 大俊' },
-              { 'text': '咔嚓优选团 Reina', 'value': '咔嚓优选团 Reina' },
-              { 'text': '咔嚓优选团 Cci', 'value': '咔嚓优选团 Cci' },
-              { 'text': '咔嚓优选团 Lucky', 'value': '咔嚓优选团 Lucky' },
+                { 'text': '咔嚓优选团 kitty', 'value': '咔嚓优选团 kitty' },
+                { 'text': '咔嚓优选团 周周', 'value': '咔嚓优选团 周周' },
+                { 'text': '咔嚓优选团 Smile', 'value': '咔嚓优选团 Smile' },
+                { 'text': '咔嚓优选团 大俊', 'value': '咔嚓优选团 大俊' },
+                { 'text': '咔嚓优选团 Reina', 'value': '咔嚓优选团 Reina' },
+                { 'text': '咔嚓优选团 Cci', 'value': '咔嚓优选团 Cci' },
+                { 'text': '咔嚓优选团 Lucky', 'value': '咔嚓优选团 Lucky' },
               ]
           },  
 
@@ -59,13 +59,6 @@ const MenuHeaderData = [
             "dataKeys": ["buyUV"],
             "tip": "商品成交量"
           }, 
-          {
-            "label": "访客",
-            "prop": "allSource",
-            "type": "UV/PV",
-            "dataKeys": ["allSourceUV, allSourcePV"],
-            "tip": "商品浏览量PV，访客量UV"
-          },                    
           {
             "label": "总访客量",
             "prop": "allSource",
